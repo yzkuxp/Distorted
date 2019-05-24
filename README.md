@@ -6,7 +6,8 @@ OBS: The tool it's still in development. And may have some bugs.
 
 # Dependences.
 - Python 3.x.x or higher.
-- Git (If you are using linux and want to download via Git on terminal)
+- Git (If you are using linux and want to download via Git on terminal).
+
 # Installation.
 To install you have 2 options:
 - Download the zip.
