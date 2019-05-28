@@ -5,7 +5,7 @@ Encrypt options: Md5, Sha256, Sha512, Base64, Reverte Text, Cesar Cipher and Hex
 OBS: The tool it's still in development. And may have some bugs, or some pendent features.
 
 # Dependences.
-- Python 3.x.x or higher.
+- [Python 3.x.x or higher.](https://www.python.org/downloads/)
 - Git (If you are using linux and want to download via Git on terminal).
 
 # Installation.
