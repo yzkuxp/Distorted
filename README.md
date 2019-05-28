@@ -1,6 +1,6 @@
 # About Distorted.
 Tool maded by myself in python for encrypt your text.\
-Encrypt options: Md5, Sha256, Sha512, Base64, Reverte Text and Cesar Cipher.
+Encrypt options: Md5, Sha256, Sha512, Base64, Reverte Text, Cesar Cipher and Hexadecimal.
 
 OBS: The tool it's still in development. And may have some bugs, or some pendent features.
 
