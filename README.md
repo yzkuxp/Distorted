@@ -21,3 +21,7 @@ To install you have 2 options:
  ```
   $ ./Distorted.py
  ```
+ Or:
+ ```
+ $ python3 Distorted.py
+ ```
