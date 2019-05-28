@@ -17,3 +17,7 @@ To install you have 2 options:
  $ cd /Distorted
  $ sudo chmod +x Distorted.py
  ```
+ To execute:
+ ```
+  $ ./Distorted.py
+ ```
