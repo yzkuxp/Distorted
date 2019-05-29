@@ -117,7 +117,7 @@ def Base64Encrypt():
 def CifraDeCesarEncrypt():
     Apresentacao()
     mensagemE = input("Digite a frase que deseja criptografar: ")
-    cifraE = int(input("Digite a chave:\n ~~> "))
+    cifraE = int(input("Digite a chave: "))
     print ("Resultado: ", end="")
     for i in range(len(mensagemE)):
         print(chr(ord(mensagemE[i]) + cifraE), end = "")
@@ -207,6 +207,20 @@ def Menu():
             CifraDeCesarEncrypt()
         elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
             CifraDeCesarDecrypt()
+        else:
+            print("Opção inválida tente novamente.")
+            sleep(3)
+            Apresentacao()
+            print("Cifra De César.\n  A) Criptografar.\n  B) Descriptografar.\n")
+            CDCEncryptOrDecrypt = input("Qual das opções você gostaria de utilizar:\n ~~> ")
+            if (CDCEncryptOrDecrypt == "A") or (CDCEncryptOrDecrypt == "a"):
+                CifraDeCesarEncrypt()
+            elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
+                CifraDeCesarDecrypt()
+            else:
+                print("Você inseriu um opção inválida pela segunda vez, voltando para o menu inicial.")
+                sleep(3)
+                Menu()
     elif escolhaMenu == "7":
         Apresentacao()
         print("Hexadecimal.\n  A) Criptografar.\n  B) Descriptografar.\n")
@@ -215,6 +229,20 @@ def Menu():
             HexadecimalEncrypt()
         elif (HexadecimalEncryptOrDecrypt == "B") or (HexadecimalEncryptOrDecrypt == "b"):
             HexadecimalDecrypt()
+        else:
+            print("Opção inválida tente novamente.")
+            sleep(3)
+            Apresentacao()
+            print("Hexadecimal.\n  A) Criptografar.\n  B) Descriptografar.\n")
+            HexadecimalEncryptOrDecrypt = input("Qual das opções você gostaria de utilizar:\n ~~> ")
+            if (HexadecimalEncryptOrDecrypt == "A") or (HexadecimalEncryptOrDecrypt == "a"):
+                HexadecimalEncrypt()
+            elif (HexadecimalEncryptOrDecrypt == "B") or (HexadecimalEncryptOrDecrypt == "b"):
+                HexadecimalDecrypt()
+            else:
+                print("Você inseriu um opção inválida pela segunda vez, voltando para o menu inicial.")
+                sleep(3)
+                Menu()
     elif escolhaMenu == "00":
         exit(1)
     else:
