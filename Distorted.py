@@ -1,3 +1,9 @@
+# Tool maded by myself in python for encrypt your text.
+# Encrypt options: Md5, Sha256, Sha512, Base64, Reverte Text, Cesar Cipher and Hexadecimal.
+# OBS: The tool it's still in development. And may have some bugs, or some pendent features.
+# Developed by: yzkuxp
+# Enjoy ^^
+
 #!/usr/bin/env python
 #coding: utf-8
 
@@ -60,18 +66,39 @@ def Md5Encrypt():
     stringMd5 = input("Digite o texto que deseja criptografar em Md5: ")
     resultadoMd5 = hashlib.md5(stringMd5.encode())
     print ("Resultado: " + resultadoMd5.hexdigest())
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja fazer outra criptografia em Md5?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        Md5Encrypt()
+    else:
+        Menu()
 
 def Sha256Encrypt():
     Apresentacao()
     stringSha256 = input("Digite o texto que deseja criptografar em Sha256: ")
     resultadoSha256 = hashlib.sha256(stringSha256.encode())
     print("Resultado: " + resultadoSha256.hexdigest())
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja fazer outra criptografia em Sha256?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        Sha256Encrypt()
+    else:
+        Menu()
 
 def Sha512Encrypt():
     Apresentacao()
     stringSha512 = input("Digite o texto que deseja criptografar em Sha512: ")
     resultadoSha512 = hashlib.sha512(stringSha512.encode())
     print ("Resultado: " + resultadoSha512.hexdigest())
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja fazer outra criptografia em Sha512?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        Sha512Encrypt()
+    else:
+        Menu()
 
 def Base64Encrypt():
     Apresentacao()
@@ -79,26 +106,55 @@ def Base64Encrypt():
     resultadoBase64E = b64encode(stringBase64E.encode('utf-8'))
     decode = resultadoBase64E.decode('utf-8')
     print ("Resultado: " + decode)
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja fazer outra criptografia em Base64?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        Base64Encrypt()
+    else:
+        Menu()
 
 def CifraDeCesarEncrypt():
     Apresentacao()
     mensagemE = input("Digite a frase que deseja criptografar: ")
     cifraE = int(input("Digite a chave:\n ~~> "))
+    print ("Resultado: ", end="")
     for i in range(len(mensagemE)):
-        print(chr(ord(mensagemE[i]) + cifraE), end="")
+        print(chr(ord(mensagemE[i]) + cifraE), end = "")
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja fazer outra criptografia em Cifra de Cesar?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        CifraDeCesarEncrypt()
+    else:
+        Menu()
 
 def CifraDeCesarDecrypt():
     Apresentacao()
     mensagemD = input("Digite a frase que deseja descriptografar: ")
     cifraD = int(input("Digite a chave: "))
+    print ("Resultado: ", end="")
     for i in range(len(mensagemD)):
-        print(chr(ord(mensagemD[i]) - cifraD), end="")
-
+        resultado = print(chr(ord(mensagemD[i]) - cifraD), end="")
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja descriptografar outra frase em Cifra de Cesar?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        CifraDeCesarDecrypt()
+    else:
+        Menu()
 
 def InverterTexto():
     Apresentacao()
     stringInverterTexto = input("Digite o texto que deseja inverter: ")
     print("Resultado: " + stringInverterTexto[::-1])
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja inverter outro texto?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        InverterTexto()
+    else:
+        Menu()
 
 def HexadecimalEncrypt():
     Apresentacao()
@@ -108,12 +164,26 @@ def HexadecimalEncrypt():
     ResultadoHexadecimalE = ResultadoHexadecimalE.strip("'")
     ResultadoHexadecimalE = re.sub(r'(..)', r'\1 ', ResultadoHexadecimalE).strip()
     print("Resultado: " + ResultadoHexadecimalE)
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja passar outro texto para hexadecimal?(s/N) ")
+    if refazer == "s" or refazer =="S":
+        HexadecimalEncrypt()
+    else:
+        Menu()
 
 def HexadecimalDecrypt():
     Apresentacao()
     stringHexadecimalD = input("Digite o texto em hexadecimal que deseja desvendar: ")
     ResultadoHexadecimalD = bytes.fromhex(stringHexadecimalD).decode('utf-8')
     print("Resultado: " + ResultadoHexadecimalD)
+    Vazio()
+    sleep(1)
+    refazer = input("Deseja desvendar outro texto em hexadecimal(s/N) ")
+    if refazer == "s" or refazer =="S":
+        HexadecimalDecrypt()
+    else:
+        Menu()
 
 def Menu():
     Apresentacao()
