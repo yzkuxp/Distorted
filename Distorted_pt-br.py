@@ -1,8 +1,8 @@
-# Tool maded by myself in python for encrypt your text.
-# Encrypt options: Md5, Sha256, Sha512, Base64, Reverse Text, Cesar Cipher and Hexadecimal.
-# OBS: The tool it's still in development. And may have some bugs, or some pendent features.
-# Developed by: yzkuxp
-# Enjoy ^^
+# Ferramenta feita em python por mim mesmo para criptografar o seu texto.
+# Opções de Criptografia: Md5, Sha256, Sha512, Base64, Inverter Texto, Cifra de Cesas e Hexadecimal.
+# OBS: A ferramenta ainda está em desenvolvimento. E pode ter algum bug, ou algum recurso faltando.
+# Feito por: yzkuxp
+# Aproveite ^^
 
 #!/usr/bin/env python
 #coding: utf-8
@@ -25,14 +25,14 @@ ciano = '\033[1;36m'
 
 
 if sys.version_info[0] < 3:
-    version = python_version()
-    print("\033[1;91mVocê está usando o python na versão %s ela é inferior ao python3 em diante.\033[1;97m" %(version))
+    versao = python_version()
+    print("\033[1;91mVocê está usando o python na versão %s ela é inferior ao python3 em diante.\033[1;97m" %(versao))
     print("\033[1;91mPor favor execute a ferramenta utilizando python3 em diante\033[1;97m")
     sleep(3)
     exit(1)
 
 sistemaOperacional = input("\nOlá, qual sistema operacional você está utlizando?\n  A) Linux.\n  B) Windows.\n\n ~~> ")
-def clearAgain():
+def LimparDeNovo():
     print ("Opção inválida. Insira uma opção válida.")
     sleep(2)
     sistemaOperacional = sistemaOperacional = input("\n\nOlá, qual sistema operacional você está utlizando?\n  A) Linux.\n  B) Windows.\n\n ~~> ")
@@ -41,20 +41,20 @@ def clearAgain():
     elif (sistemaOperacional == "B") or (sistemaOperacional == "b"):
         windowsClear = os.system('cls')
     else:
-        clearAgain()
-def clear():
+        LimparDeNovo()
+def Limpar():
     if (sistemaOperacional == "A") or (sistemaOperacional == "a"):
         linuxClear = os.system('clear')
     elif (sistemaOperacional == "B") or (sistemaOperacional == "b"):
         windowsClear = os.system('cls')
     else:
-        clearAgain()
+        LimparDeNovo()
 
 def Vazio():
     print("    ")
 
 def Apresentacao():
-    clear()
+    Limpar()
     print ("""\033[1;35m
 \t\t   ___________________________________________
 \t\t  |                                           |
@@ -67,7 +67,7 @@ def Apresentacao():
 \t\t  |___________________________________________|
     \033[1;97m""")
 
-def Md5Encrypt():
+def Md5Criptografar():
     Apresentacao()
     stringMd5 = input("\n\033[1;36mDigite o texto que deseja criptografar em Md5\033[1;97m: ")
     resultadoMd5 = hashlib.md5(stringMd5.encode())
@@ -76,11 +76,11 @@ def Md5Encrypt():
     sleep(1)
     refazer = input("\033[1;31mDeseja fazer outra criptografia em Md5?(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        Md5Encrypt()
+        Md5Criptografar()
     else:
         Menu()
 
-def Sha256Encrypt():
+def Sha256Criptografar():
     Apresentacao()
     stringSha256 = input("\n\033[1;36mDigite o texto que deseja criptografar em Sha256\033[1;97m: ")
     resultadoSha256 = hashlib.sha256(stringSha256.encode())
@@ -89,11 +89,11 @@ def Sha256Encrypt():
     sleep(1)
     refazer = input("\033[1;31mDeseja fazer outra criptografia em Sha256?(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        Sha256Encrypt()
+        Sha256Criptografar()
     else:
         Menu()
 
-def Sha512Encrypt():
+def Sha512Criptografar():
     Apresentacao()
     stringSha512 = input("\n\033[1;36mDigite o texto que deseja criptografar em Sha512\033[1;97m: ")
     resultadoSha512 = hashlib.sha512(stringSha512.encode())
@@ -102,11 +102,11 @@ def Sha512Encrypt():
     sleep(1)
     refazer = input("\033[1;31mDeseja fazer outra criptografia em Sha512?(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        Sha512Encrypt()
+        Sha512Criptografar()
     else:
         Menu()
 
-def Base64Encrypt():
+def Base64Criptografar():
     Apresentacao()
     stringBase64E = input("\n\033[1;36mDigite o texto que deseja criptografar em Base64\033[1;97m: ")
     resultadoBase64E = b64encode(stringBase64E.encode('utf-8'))
@@ -116,37 +116,37 @@ def Base64Encrypt():
     sleep(1)
     refazer = input("\033[1;31mDeseja fazer outra criptografia em Base64?(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        Base64Encrypt()
+        Base64Criptografar()
     else:
         Menu()
 
-def CifraDeCesarEncrypt():
+def CifraDeCesarCriptografar():
     Apresentacao()
     mensagemE = input("\n\033[1;36mDigite a frase que deseja criptografar\033[1;97m: ")
-    cifraE = int(input("Digite a chave: "))
+    cifraE = int(input("\033[1;36mDigite a chave\033[1;97m: "))
     print ("\033[1;36mResultado\033[1;97m: ", end="")
     for i in range(len(mensagemE)):
         print(chr(ord(mensagemE[i]) + cifraE), end = "")
     Vazio()
     sleep(1)
-    refazer = input("\033[1;31mDeseja fazer outra criptografia em Cifra de Cesar?(s/N)\033[1;97m ")
+    refazer = input("\n\033[1;31mDeseja fazer outra criptografia em Cifra de Cesar?(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        CifraDeCesarEncrypt()
+        CifraDeCesarCriptografar()
     else:
         Menu()
 
-def CifraDeCesarDecrypt():
+def CifraDeCesarDescriptografar():
     Apresentacao()
     mensagemD = input("\n\033[1;36mDigite a frase que deseja descriptografar\033[1;97m: ")
-    cifraD = int(input("Digite a chave: "))
+    cifraD = int(input("\033[1;36mDigite a chave\033[1;97m: "))
     print ("\033[1;36mResultado\033[1;97m: ", end="")
     for i in range(len(mensagemD)):
         resultado = print(chr(ord(mensagemD[i]) - cifraD), end="")
     Vazio()
     sleep(1)
-    refazer = input("\033[1;31mDeseja descriptografar outra frase em Cifra de Cesar?(s/N)\033[1;97m ")
+    refazer = input("\n\033[1;31mDeseja descriptografar outra frase em Cifra de Cesar?(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        CifraDeCesarDecrypt()
+        CifraDeCesarDescriptografar()
     else:
         Menu()
 
@@ -162,7 +162,7 @@ def InverterTexto():
     else:
         Menu()
 
-def HexadecimalEncrypt():
+def HexadecimalCriptografar():
     Apresentacao()
     stringHexadecimalE = input("\n\033[1;36mDigite o texto que deseja passar para hexadecimal\033[1;97m: ")
     ResultadoHexadecimalE = binascii.hexlify(bytes(stringHexadecimalE, "utf-8"))
@@ -174,77 +174,94 @@ def HexadecimalEncrypt():
     sleep(1)
     refazer = input("\033[1;31mDeseja passar outro texto para hexadecimal?(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        HexadecimalEncrypt()
+        HexadecimalCriptografar()
     else:
         Menu()
 
-def HexadecimalDecrypt():
+def HexadecimalDescriptografar():
     Apresentacao()
     stringHexadecimalD = input("\n\033[1;36mDigite o texto em hexadecimal que deseja desvendar\033[1;97m: ")
     ResultadoHexadecimalD = bytes.fromhex(stringHexadecimalD).decode('utf-8')
     print("\033[1;36mResultado\033[1;97m: " + ResultadoHexadecimalD)
     Vazio()
-    refazer = input("\033[1;31mDeseja desvendar outro texto em hexadecimal(s/N)\033[1;97m ")
     sleep(1)
+    refazer = input("\033[1;31mDeseja desvendar outro texto em hexadecimal(s/N)\033[1;97m ")
     if refazer == "s" or refazer =="S":
-        HexadecimalDecrypt()
+        HexadecimalDescriptografar()
     else:
         Menu()
 
 def Menu():
     Apresentacao()
-    print("\n\t \033[1;36m[+] \033[1;97mOpções disponíveis:\n\t  \033[1;35m1\033[1;97m. \033[1;36mMd5.\n\t  \033[1;35m2\033[1;97m. \033[1;36mSha256.\n\t  \033[1;35m3\033[1;97m. \033[1;36mSha512.\n\t  \033[1;35m4\033[1;97m. \033[1;36mBase64.\n\t  \033[1;35m5\033[1;97m. \033[1;36mInverter Texto.\n\t  \033[1;35m6\033[1;97m. \033[1;35mENCRYPT/DECRYPT \033[1;97m- \033[1;36mCifra de César.\n\t  \033[1;35m7\033[1;97m. \033[1;35mENCRYPT/DECRYPT \033[1;97m- \033[1;36mHexadecimal.\n\t  \033[1;35m00\033[1;97m. Exit.\033[1;97m\n")
+    print("""
+    \t \033[1;36m[+] \033[1;97mOpções disponíveis:
+    \t  \033[1;35m1\033[1;97m. \033[1;35mCRIPTOGRAFAR\033[1;97m - \033[1;36mMd5.
+    \t  \033[1;35m2\033[1;97m. \033[1;35mCRIPTOGRAFAR\033[1;97m - \033[1;36mSha256.
+    \t  \033[1;35m3\033[1;97m. \033[1;35mCRIPTOGRAFAR\033[1;97m - \033[1;36mSha512.
+    \t  \033[1;35m4\033[1;97m. \033[1;35mCRIPTOGRAFAR\033[1;97m - \033[1;36mBase64.
+    \t  \033[1;35m5\033[1;97m. \033[1;35mCRIPTOGRAFAR\033[1;97m - \033[1;36mInverter Texto.
+    \t  \033[1;35m6\033[1;97m. \033[1;35mCRIPTOGRAFAR/DESCRIPTOGRAFAR \033[1;97m- \033[1;36mCifra de César.
+    \t  \033[1;35m7\033[1;97m. \033[1;35mCRIPTOGRAFAR/DESCRIPTOGRAFAR \033[1;97m- \033[1;36mHexadecimal.
+    \t  \033[1;35m00\033[1;97m. Exit.\033[1;97m\n""")
     escolhaMenu = input("   \033[1;31m~~>\033[1;97m ")
     if escolhaMenu == "1":
-        Md5Encrypt()
+        Md5Criptografar()
     elif escolhaMenu == "2":
-        Sha256Encrypt()
+        Sha256Criptografar()
     elif escolhaMenu == "3":
-        Sha512Encrypt()
+        Sha512Criptografar()
     elif escolhaMenu == "4":
-        Base64Encrypt()
+        Base64Criptografar()
     elif escolhaMenu == "5":
         InverterTexto()
     elif escolhaMenu == "6":
         Apresentacao()
-        print("Cifra De César.\n  \033[1;35mA\033[1;97m) Criptografar.\n  \033[1;35mB\033[1;97m) Descriptografar.\n")
-        CDCEncryptOrDecrypt = input("   \033[1;31m~~>\033[1;97m ")
-        if (CDCEncryptOrDecrypt == "A") or (CDCEncryptOrDecrypt == "a"):
-            CifraDeCesarEncrypt()
-        elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
-            CifraDeCesarDecrypt()
+        print("""\t \033[1;36m[+] \033[1;97mCifra De César.
+          \033[1;35mA\033[1;97m) \033[1;36mCriptografar.\033[1;97m
+          \033[1;35mB\033[1;97m) \033[1;36mDescriptografar.\033[1;97m\n""")
+        CDCCriptografarOuDescriptografar = input("   \033[1;31m~~>\033[1;97m ")
+        if (CDCCriptografarOuDescriptografar == "A") or (CDCCriptografarOuDescriptografar == "a"):
+            CifraDeCesarCriptografar()
+        elif (CDCCriptografarOuDescriptografar == "B") or (CDCCriptografarOuDescriptografar == "b"):
+            CifraDeCesarDescriptografar()
         else:
             print("\033[1;91mOpção inválida tente novamente.\033[1;97m")
             sleep(3)
             Apresentacao()
-            print("Cifra De César.\n  \033[1;35mA\033[1;97m) Criptografar.\n  \033[1;35mB\033[1;97m) Descriptografar.\n")
-            CDCEncryptOrDecrypt = input("   \033[1;31m~~>\033[1;97m ")
-            if (CDCEncryptOrDecrypt == "A") or (CDCEncryptOrDecrypt == "a"):
-                CifraDeCesarEncrypt()
-            elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
-                CifraDeCesarDecrypt()
+            print("""\t \033[1;36m[+] \033[1;97mCifra De César.
+              \033[1;35mA\033[1;97m) \033[1;36mCriptografar.\033[1;97m
+              \033[1;35mB\033[1;97m) \033[1;36mDescriptografar.\033[1;97m\n""")
+            CDCCriptografarOuDescriptografar = input("   \033[1;31m~~>\033[1;97m ")
+            if (CDCCriptografarOuDescriptografar == "A") or (CDCCriptografarOuDescriptografar == "a"):
+                CifraDeCesarCriptografar()
+            elif (CDCCriptografarOuDescriptografar == "B") or (CDCCriptografarOuDescriptografar == "b"):
+                CifraDeCesarDescriptografar()
             else:
                 print("\033[1;91mVocê inseriu um opção inválida pela segunda vez, voltando para o menu inicial.\033[1;97m")
                 sleep(3)
                 Menu()
     elif escolhaMenu == "7":
         Apresentacao()
-        print("Hexadecimal.\n  \033[1;35mA\033[1;97m) Criptografar.\n  \033[1;35mB\033[1;97m) Descriptografar.\n")
-        HexadecimalEncryptOrDecrypt = input("    \033[1;31m~~>\033[1;97m ")
-        if (HexadecimalEncryptOrDecrypt == "A") or (HexadecimalEncryptOrDecrypt == "a"):
-            HexadecimalEncrypt()
-        elif (HexadecimalEncryptOrDecrypt == "B") or (HexadecimalEncryptOrDecrypt == "b"):
-            HexadecimalDecrypt()
+        print("""\t \033[1;36m[+] \033[1;97mHexadecimal.
+          \033[1;35mA\033[1;97m) \033[1;36mCriptografar.\033[1;97m
+          \033[1;35mB\033[1;97m) \033[1;36mDescriptografar.\033[1;97m\n""")
+        HexadecimalCriptografarOuDescriptografar = input("    \033[1;31m~~>\033[1;97m ")
+        if (HexadecimalCriptografarOuDescriptografar == "A") or (HexadecimalCriptografarOuDescriptografar == "a"):
+            HexadecimalCriptografar()
+        elif (HexadecimalCriptografarOuDescriptografar == "B") or (HexadecimalCriptografarOuDescriptografar == "b"):
+            HexadecimalDescriptografar()
         else:
             print("\033[1;91mOpção inválida tente novamente.\033[1;97m")
             sleep(3)
             Apresentacao()
-            print("Hexadecimal.\n  \033[1;35mA\033[1;97m) Criptografar.\n  \033[1;35mB\033[1;97m) Descriptografar.\n")
-            HexadecimalEncryptOrDecrypt = input("   \033[1;31m~~>\033[1;97m ")
-            if (HexadecimalEncryptOrDecrypt == "A") or (HexadecimalEncryptOrDecrypt == "a"):
-                HexadecimalEncrypt()
-            elif (HexadecimalEncryptOrDecrypt == "B") or (HexadecimalEncryptOrDecrypt == "b"):
-                HexadecimalDecrypt()
+            print("""\t \033[1;36m[+] \033[1;97mHexadecimal.
+              \033[1;35mA\033[1;97m) \033[1;36mCriptografar.\033[1;97m
+              \033[1;35mB\033[1;97m) \033[1;36mDescriptografar\033[1;97m.\n""")
+            HexadecimalCriptografarOuDescriptografar = input("   \033[1;31m~~>\033[1;97m ")
+            if (HexadecimalCriptografarOuDescriptografar == "A") or (HexadecimalCriptografarOuDescriptografar == "a"):
+                HexadecimalCriptografar()
+            elif (HexadecimalCriptografarOuDescriptografar == "B") or (HexadecimalCriptografarOuDescriptografar == "b"):
+                HexadecimalDescriptografar()
             else:
                 print("\033[1;91mVocê inseriu um opção inválida pela segunda vez, voltando para o menu inicial.\033[1;97m")
                 sleep(3)
@@ -253,7 +270,7 @@ def Menu():
         exit(1)
     else:
         print("\033[1;91mVocê inseriu uma opção inválida. Por favor insira uma das opções.\033[1;97m")
-        sleep(2)
+        sleep(3)
         Menu()
 
 Menu()
