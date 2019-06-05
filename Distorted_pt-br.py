@@ -202,7 +202,7 @@ def Menu():
     \t  \033[1;35m5\033[1;97m. \033[1;35mCRIPTOGRAFAR\033[1;97m - \033[1;36mInverter Texto.
     \t  \033[1;35m6\033[1;97m. \033[1;35mCRIPTOGRAFAR/DESCRIPTOGRAFAR \033[1;97m- \033[1;36mCifra de César.
     \t  \033[1;35m7\033[1;97m. \033[1;35mCRIPTOGRAFAR/DESCRIPTOGRAFAR \033[1;97m- \033[1;36mHexadecimal.
-    \t  \033[1;35m00\033[1;97m. Exit.\033[1;97m\n""")
+    \t  \033[1;35mq\033[1;97m. Exit.\033[1;97m\n""")
     escolhaMenu = input("   \033[1;31m~~>\033[1;97m ")
     if escolhaMenu == "1":
         Md5Criptografar()
@@ -266,7 +266,7 @@ def Menu():
                 print("\033[1;91mVocê inseriu um opção inválida pela segunda vez, voltando para o menu inicial.\033[1;97m")
                 sleep(3)
                 Menu()
-    elif escolhaMenu == "00":
+    elif escolhaMenu == "q" or escolhaMenu == "Q":
         exit(1)
     else:
         print("\033[1;91mVocê inseriu uma opção inválida. Por favor insira uma das opções.\033[1;97m")
