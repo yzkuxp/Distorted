@@ -201,7 +201,7 @@ def Menu():
     \t  \033[1;35m5\033[1;97m. \033[1;35mEncrypt\033[1;97m - \033[1;36mReverse Text.
     \t  \033[1;35m6\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mCipher Caesar.
     \t  \033[1;35m7\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mHexadecimal.
-    \t  \033[1;35m00\033[1;97m. Exit.\033[1;97m\n""")
+    \t  \033[1;35mq\033[1;97m. Exit.\033[1;97m\n""")
     menuChoice = input("   \033[1;31m~~>\033[1;97m ")
     if menuChoice == "1":
         Md5Encrypt()
@@ -265,7 +265,7 @@ def Menu():
                 print("\033[1;91mYou've entered an invalid option twice, going back to menu.\033[1;97m")
                 sleep(3)
                 Menu()
-    elif menuChoice == "00":
+    elif menuChoice == "q" or menuChoice == "Q":
         exit(1)
     else:
         print("\033[1;91mYou've entered an invalid option. Please enter one of the listed options.\033[1;97m")
