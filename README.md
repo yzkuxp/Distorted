@@ -4,7 +4,6 @@ Encrypt options: Md5, Sha256, Sha512, Base64, Reverse Text, Caesar Cipher and He
 
 # Dependences.
 - [Python 3.x.x or higher.](https://www.python.org/downloads/)
-- Git (If you are using linux and want to download via Git on terminal).
 
 # Installation.
 To install you have 2 options:
