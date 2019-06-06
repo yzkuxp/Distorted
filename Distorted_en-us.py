@@ -25,16 +25,16 @@ ciano = '\033[1;36m'
 
 if sys.version_info[0] < 3:
     version = python_version()
-    print("\033[1;91mYou are using python in version %s witch is lower than python3 onward.\033[1;97m" %(version))
+    print("\033[1;91mYou are using python in version %s which is lower than python3 onward.\033[1;97m" %(version))
     print("\033[1;91mPlease run the tool with a version higher than python 3.x.x.\033[1;97m")
     sleep(3)
     exit(1)
 
-operationalSystem = input("\nHey, witch system are you using?\n  A) Linux.\n  B) Windows.\n\n ~~> ")
+operationalSystem = input("\nHey, which system are you using?\n  A) Linux.\n  B) Windows.\n\n ~~> ")
 def ClearAgain():
     print ("Invalid option, try again.")
     sleep(2)
-    operationalSystem = operationalSystem = input("\n\nHey, witch system are you using?\n  A) Linux.\n  B) Windows.\n\n ~~> ")
+    operationalSystem = operationalSystem = input("\n\nHey, which system are you using?\n  A) Linux.\n  B) Windows.\n\n ~~> ")
     if (operationalSystem == "A") or (operationalSystem == "a"):
         linuxClear = os.system('clear')
     elif (operationalSystem == "B") or (operationalSystem == "b"):
@@ -201,7 +201,7 @@ def Menu():
     \t  \033[1;35m5\033[1;97m. \033[1;35mEncrypt\033[1;97m - \033[1;36mReverse Text.
     \t  \033[1;35m6\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mCipher Caesar.
     \t  \033[1;35m7\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mHexadecimal.
-    \t  \033[1;35mq\033[1;97m. Exit.\033[1;97m\n""")
+    \t  \033[1;35m00\033[1;97m. Exit.\033[1;97m\n""")
     menuChoice = input("   \033[1;31m~~>\033[1;97m ")
     if menuChoice == "1":
         Md5Encrypt()
@@ -265,7 +265,7 @@ def Menu():
                 print("\033[1;91mYou've entered an invalid option twice, going back to menu.\033[1;97m")
                 sleep(3)
                 Menu()
-    elif menuChoice == "q" or menuChoice == "Q":
+    elif menuChoice == "00":
         exit(1)
     else:
         print("\033[1;91mYou've entered an invalid option. Please enter one of the listed options.\033[1;97m")
