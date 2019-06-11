@@ -72,7 +72,7 @@ def Sha256Criptografar():
     Vazio()
     sleep(1)
     refazer = input("\033[1;31mDeseja fazer outra criptografia em Sha256?(s/N)\033[1;97m ")
-    if refazer == "s" or refazer =="S":
+    if refazer == "s" or refazer == "S":
         Sha256Criptografar()
     else:
         Menu()
@@ -85,7 +85,7 @@ def Sha512Criptografar():
     Vazio()
     sleep(1)
     refazer = input("\033[1;31mDeseja fazer outra criptografia em Sha512?(s/N)\033[1;97m ")
-    if refazer == "s" or refazer =="S":
+    if refazer == "s" or refazer == "S":
         Sha512Criptografar()
     else:
         Menu()
@@ -129,7 +129,7 @@ def CifraDeCesarDescriptografar():
     Vazio()
     sleep(1)
     refazer = input("\n\033[1;31mDeseja descriptografar outra frase em Cifra de Cesar?(s/N)\033[1;97m ")
-    if refazer == "s" or refazer =="S":
+    if refazer == "s" or refazer == "S":
         CifraDeCesarDescriptografar()
     else:
         Menu()
@@ -141,7 +141,7 @@ def InverterTexto():
     Vazio()
     sleep(1)
     refazer = input("\033[1;31mDeseja inverter outro texto?(s/N)\033[1;97m ")
-    if refazer == "s" or refazer =="S":
+    if refazer == "s" or refazer == "S":
         InverterTexto()
     else:
         Menu()
