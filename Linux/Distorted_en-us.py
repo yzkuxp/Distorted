@@ -124,11 +124,11 @@ def CipherCaesarDecrypt():
     cifraD = int(input("\033[1;36mType the key\033[1;97m: "))
     print ("\033[1;36mResult\033[1;97m: ", end="")
     for i in range(len(messageD)):
-        Result = print(chr(ord(messageD[i]) - cifraD), end="")
+        Result = print(chr(ord(messageD[i]) - cifraD), end = "")
     Blank()
     sleep(1)
     redo = input("\n\033[1;31mDo you want to do another decrypt in Caesar Cipher?(y/N)\033[1;97m ")
-    if redo == "y" or redo =="Y":
+    if redo == "y" or redo == "Y":
         CipherCaesarDecrypt()
     else:
         Menu()
@@ -140,7 +140,7 @@ def ReverseText():
     Blank()
     sleep(1)
     redo = input("\033[1;31mDo you want to reverse another text?(y/N)\033[1;97m ")
-    if redo == "y" or redo =="Y":
+    if redo == "y" or redo == "Y":
         ReverseText()
     else:
         Menu()
