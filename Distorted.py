@@ -1,5 +1,5 @@
 # Tool maded in python by myself to encrypt your text.
-# Options: Md5, Sha256, Sha512, Base64, Reverse Text, Caesar Cipher and Hexadecimal.
+# Options: Md5, Sha256, Sha512, Base64, Reverse Text, Caesar Cipher, Hexadecimal and Binary.
 # By: yzkuxp
 # Enjoy ^^
 
@@ -180,8 +180,8 @@ def Linux():
         else:
             Menu()
 
-    # Cipher Caesar ----------------------------------------------------------------
-    def CipherCaesarEncrypt():
+    # Caesar Cipher ----------------------------------------------------------------
+    def CaesarCipherEncrypt():
         Apresentation()
         messageE = input("\n\033[1;36mType the text you want to encrypt in Caesar Cipher\033[1;97m: ")
         cifraE = int(input("\033[1;36mType the key\033[1;97m: "))
@@ -192,11 +192,11 @@ def Linux():
         sleep(1)
         redo = input("\n\033[1;31mDo you want to do another encrypt in Caesar Cipher?(y/N)\033[1;97m ")
         if redo == "y" or redo =="Y":
-            CipherCaesarEncrypt()
+            CaesarCipherEncrypt()
         else:
             Menu()
 
-    def CipherCaesarDecrypt():
+    def CaesarCipherDecrypt():
         Apresentation()
         messageD = input("\n\033[1;36mType the text you want to decrypt in Caesar Cipher\033[1;97m: ")
         cifraD = int(input("\033[1;36mType the key\033[1;97m: "))
@@ -207,7 +207,7 @@ def Linux():
         sleep(1)
         redo = input("\n\033[1;31mDo you want to do another decrypt in Caesar Cipher?(y/N)\033[1;97m ")
         if redo == "y" or redo == "Y":
-            CipherCaesarDecrypt()
+            CaesarCipherDecrypt()
         else:
             Menu()
 
@@ -264,7 +264,7 @@ def Linux():
         \t  \033[1;35m3\033[1;97m. \033[1;35mEncrypt\033[1;97m - \033[1;36mSha512.
         \t  \033[1;35m4\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mBase64.
         \t  \033[1;35m5\033[1;97m. \033[1;35mEncrypt\033[1;97m - \033[1;36mReverse Text.
-        \t  \033[1;35m6\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mCipher Caesar.
+        \t  \033[1;35m6\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mCaesar Cipher.
         \t  \033[1;35m7\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mHexadecimal.
         \t  \033[1;35m8\033[1;97m. \033[1;35mEncrypt/Decrypt \033[1;97m- \033[1;36mBinary.
         \t  \033[1;35mq\033[1;97m. Exit.\033[1;97m\n""")
@@ -305,14 +305,14 @@ def Linux():
             ReverseText()
         elif menuChoice == "6":
             Apresentation()
-            print("""\t \033[1;36m[+] \033[1;97mCipher Caesar.
+            print("""\t \033[1;36m[+] \033[1;97mCaesar Cipher.
               \033[1;35mA\033[1;97m) \033[1;36mEncrypt.\033[1;97m
               \033[1;35mB\033[1;97m) \033[1;36mDecrypt.\033[1;97m\n""")
             CDCEncryptOrDecrypt = input("   \033[1;31m~~>\033[1;97m ")
             if (CDCEncryptOrDecrypt == "A") or (CDCEncryptOrDecrypt == "a"):
-                CipherCaesarEncrypt()
+                CaesarCipherEncrypt()
             elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
-                CipherCaesarDecrypt()
+                CaesarCipherDecrypt()
             else:
                 print("\033[1;91mInvalid option, try again.\033[1;97m")
                 sleep(3)
@@ -322,9 +322,9 @@ def Linux():
                   \033[1;35mB\033[1;97m) \033[1;36mDecrypt.\033[1;97m\n""")
                 CDCEncryptOrDecrypt = input("   \033[1;31m~~>\033[1;97m ")
                 if (CDCEncryptOrDecrypt == "A") or (CDCEncryptOrDecrypt == "a"):
-                    CipherCaesarEncrypt()
+                    CaesarCipherEncrypt()
                 elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
-                    CipherCaesarDecrypt()
+                    CaesarCipherDecrypt()
                 else:
                     print("\033[1;91mYou've entered an invalid option twice, going back to menu.\033[1;97m")
                     sleep(3)
@@ -537,8 +537,8 @@ def Windows():
         else:
             Menu()
 
-    # Cipher Caesar ----------------------------------------------------------------
-    def CipherCaesarEncrypt():
+    # Caesar Cipher ----------------------------------------------------------------
+    def CaesarCipherEncrypt():
         Apresentation()
         messageE = input("\nType the text you want to encrypt in Caesar Cipher: ")
         cifraE = int(input("Type the key: "))
@@ -549,11 +549,11 @@ def Windows():
         sleep(1)
         redo = input("\nDo you want to do another encrypt in Caesar Cipher?(y/N) ")
         if redo == "y" or redo =="Y":
-            CipherCaesarEncrypt()
+            CaesarCipherEncrypt()
         else:
             Menu()
 
-    def CipherCaesarDecrypt():
+    def CaesarCipherDecrypt():
         Apresentation()
         messageD = input("\nType the text you want to decrypt in Caesar Cipher: ")
         cifraD = int(input("Type the key: "))
@@ -564,7 +564,7 @@ def Windows():
         sleep(1)
         redo = input("\nDo you want to do another decrypt in Caesar Cipher?(y/N) ")
         if redo == "y" or redo == "Y":
-            CipherCaesarDecrypt()
+            CaesarCipherDecrypt()
         else:
             Menu()
 
@@ -621,7 +621,7 @@ def Windows():
         \t  3. Encrypt - Sha512.
         \t  4. Encrypt/Decrypt - Base64.
         \t  5. Encrypt - Reverse Text.
-        \t  6. Encrypt/Decrypt - Cipher Caesar.
+        \t  6. Encrypt/Decrypt - Caesar Cipher.
         \t  7. Encrypt/Decrypt - Hexadecimal.
         \t  8. Encrypt/Decrypt - Binary.
         \t  q. Exit.\n""")
@@ -662,14 +662,14 @@ def Windows():
             ReverseText()
         elif menuChoice == "6":
             Apresentation()
-            print("""\t [+] Cipher Caesar.
+            print("""\t [+] Caesar Cipher.
               A) Encrypt.
               B) Decrypt.\n""")
             CDCEncryptOrDecrypt = input("   ~~> ")
             if (CDCEncryptOrDecrypt == "A") or (CDCEncryptOrDecrypt == "a"):
-                CipherCaesarEncrypt()
+                CaesarCipherEncrypt()
             elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
-                CipherCaesarDecrypt()
+                CaesarCipherDecrypt()
             else:
                 print("Invalid option, try again.")
                 sleep(3)
@@ -679,9 +679,9 @@ def Windows():
                   B) Decrypt.\n""")
                 CDCEncryptOrDecrypt = input("   ~~> ")
                 if (CDCEncryptOrDecrypt == "A") or (CDCEncryptOrDecrypt == "a"):
-                    CipherCaesarEncrypt()
+                    CaesarCipherEncrypt()
                 elif (CDCEncryptOrDecrypt == "B") or (CDCEncryptOrDecrypt == "b"):
-                    CipherCaesarDecrypt()
+                    CaesarCipherDecrypt()
                 else:
                     print("You've entered an invalid option twice, going back to menu.")
                     sleep(3)
