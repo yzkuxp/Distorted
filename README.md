@@ -16,7 +16,7 @@ To install you have 2 options:
  ```
  To execute:
  ```
-  $ ./Distorted.py
+ $ ./Distorted.py
  ```
  Or:
  ```
